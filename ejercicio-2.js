@@ -12,8 +12,8 @@ if(valores[3]>valores[4])
 }
 }
 function eje3(){
-    var numero1 =5;
-    var numero2 =8;
+    let numero1 =5;
+    let numero2 =8;
 
     if(numero1<numero2) 
         {
@@ -34,5 +34,42 @@ function eje3(){
        }             
 }     
 function eje4(){
-
+    let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K',
+        'E', 'T'];
+    let DNI = prompt("Ingrese el DNI");
+    let resto = DNI%23;
+    console.log("Su letra es"+letras[resto]);
+    
+    
 }                                                             
+function eje5(){
+    let numero = prompt("Ingrese un número")
+    for(var i=numero; i<=0; i--)
+    {
+        console.log(numero*(numero-1)); 
+        
+    }
+}
+function eje6(){
+    let numerito = prompt("Ingrese un numero");
+    let resto = numerito%2;
+    if(resto==1)
+    {
+        console.log("El número ingresado es impar")
+    }
+    else{
+        console.log("El número ingresado es par")
+    }
+}
+function eje7(){
+    
+}
+function eje8(){
+
+}
+function eje9(){
+
+}
+function eje10(){
+   let number = [1, 2, 3, 4, 5, 6];
+}
