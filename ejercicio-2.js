@@ -1,3 +1,10 @@
+function eje1(){
+    let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    for(i=0; i<12; i++)
+    {
+        console.log(meses[i])
+    }
+}
 var valores = [true, 5, false, "hola", "adios",2];
 function eje2(){
 if(valores[3]>valores[4])
@@ -44,10 +51,11 @@ function eje4(){
 }                                                             
 function eje5(){
     let numero = prompt("Ingrese un número")
-    for(var i=numero; i<=0; i--)
+    let p=numero
+    for(var i=0; i<numero; i++)
     {
-        console.log(numero*(numero-1)); 
-        
+       p = p*(numero-1-i)
+       console.log("El factorial de"+numero+"es "+ p) 
     }
 }
 function eje6(){
@@ -62,14 +70,51 @@ function eje6(){
     }
 }
 function eje7(){
+    let texto = prompt("ingrese texto")
+    if (texto === texto.toUpperCase()) {
+        console.log("La texto está formada solo por mayúsculas.");
+      } else if (texto === texto.toLowerCase()) {
+        console.log("La texto está formada solo por minúsculas.");
+      } else {
+        console.log("La texto es una mezcla de mayúsculas y minúsculas.");
+      }
+    }
     
-}
 function eje8(){
+    let texto1 = prompt("Ingrese texto")
+    function palindromo(texto){
+    let as = texto2.toLowerCase().replace(/[^a-z0-9]/g, "")
+    return as === as.split("").reverse().join("");
+    }
+    if(palindromo(texto1)==true)
+    {
+        console.log("El texto ingresado es un palindromo")
+    }
+    else
+    {
+        console.log("El texto ingresado no es un palindromo")
+    }
 
 }
 function eje9(){
-
+   
 }
 function eje10(){
-   let number = [1, 2, 3, 4, 5, 6];
+    function lanzarDados() {
+        return Math.floor(Math.random() * 6) + 1;
+      }
+      
+      function simularLanzamientos(numLanzamientos) {
+        const resultados = Array(11).fill(0); // Sumas posibles: 2-12
+        for (let i = 0; i < numLanzamientos; i++) {
+          const dado1 = lanzarDados();
+          const dado2 = lanzarDados();
+          const suma = dado1 + dado2;
+          resultados[suma - 2]++; // Ajuste de índice
+        }
+        return resultados;
+      }
+      
+      const lanzamientos = simularLanzamientos(36000);
+      console.log(lanzamientos);
 }
