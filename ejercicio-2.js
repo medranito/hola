@@ -69,52 +69,114 @@ function eje6(){
         console.log("El número ingresado es par")
     }
 }
-function eje7(){
-    let texto = prompt("ingrese texto")
-    if (texto === texto.toUpperCase()) {
-        console.log("La texto está formada solo por mayúsculas.");
-      } else if (texto === texto.toLowerCase()) {
-        console.log("La texto está formada solo por minúsculas.");
-      } else {
-        console.log("La texto es una mezcla de mayúsculas y minúsculas.");
-      }
+function eje8(){
+    function print() {
+        var texto = prompt("Introducí un texto para saber si es un palíndromo");
+        esPalindromo(texto);
     }
     
-function eje8(){
-    let texto1 = prompt("Ingrese texto")
-    function palindromo(texto){
-    let as = texto2.toLowerCase().replace(/[^a-z0-9]/g, "")
-    return as === as.split("").reverse().join("");
-    }
-    if(palindromo(texto1)==true)
-    {
-        console.log("El texto ingresado es un palindromo")
-    }
-    else
-    {
-        console.log("El texto ingresado no es un palindromo")
-    }
-
+    
+    function esPalindromo(cadena) {
+        let cadenaLimpia = cadena.replace(/\s+/g, '').toLowerCase();
+        let cadenaInvertida = cadenaLimpia.split('').reverse().join('');
+        if (cadenaLimpia === cadenaInvertida) {
+            console.log("El texto es un palíndromo");
+        } else {
+            console.log("El texto no es un palíndromo");
+        }
+    }    
 }
 function eje9(){
-   
+    function Persona(nombre, edad, genero) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+    }
+    
+    
+    Persona.prototype.obtDetalles = function () {
+        console.log(`Nombre: ${this.nombre}, Edad: ${this.edad}, Género: ${this.genero}`);
+    };
+    
+    
+    function Estudiante(nombre, edad, genero, curso, grupo) {
+        Persona.call(this, nombre, edad, genero);
+        this.curso = curso;
+        this.grupo = grupo;
+    }
+    
+    
+    Estudiante.prototype = Object.create(Persona.prototype);
+    Estudiante.prototype.constructor = Estudiante;
+    
+    
+    Estudiante.prototype.registrar = function () {
+        console.log(`${this.nombre} ha sido registrado en el curso ${this.curso}, grupo ${this.grupo}.`);
+    };
+    
+    
+    function Profesor(nombre, edad, genero, asignatura, nivel) {
+        Persona.call(this, nombre, edad, genero);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+    }
+    
+    
+    Profesor.prototype = Object.create(Persona.prototype);
+    Profesor.prototype.constructor = Profesor;
+    
+    
+    Profesor.prototype.asignar = function () {
+        console.log(`${this.nombre} imparte la asignatura ${this.asignatura} en nivel ${this.nivel}.`);
+    };
+    
+    
+    function print() {
+        const persona1 = new Persona("Carlos", 30, "Masculino");
+        persona1.obtDetalles();
+    
+    
+        const estudiante1 = new Estudiante("Ana", 20, "Femenino", "Matemática", "A");
+        estudiante1.obtDetalles();
+        estudiante1.registrar();
+    
+    
+        const profesor1 = new Profesor("Luis", 45, "Masculino", "Física", "Secundaria");
+        profesor1.obtDetalles();
+        profesor1.asignar();
+    }
+    
 }
 function eje10(){
-    function lanzarDados() {
+    var frecuencias = new Array(13).fill(0);
+
+
+    function lanzarDado() {
         return Math.floor(Math.random() * 6) + 1;
-      }
-      
-      function simularLanzamientos(numLanzamientos) {
-        const resultados = Array(11).fill(0); // Sumas posibles: 2-12
-        for (let i = 0; i < numLanzamientos; i++) {
-          const dado1 = lanzarDados();
-          const dado2 = lanzarDados();
-          const suma = dado1 + dado2;
-          resultados[suma - 2]++; // Ajuste de índice
+    }
+    
+    
+    function print() {
+        console.log("Lanzamientos:");
+        for (let i = 0; i < 5; i++) {
+            let dado1 = lanzarDado();
+            let dado2 = lanzarDado();
+            console.log(`Lanzamiento ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}, Suma = ${dado1 + dado2}`);
         }
-        return resultados;
-      }
-      
-      const lanzamientos = simularLanzamientos(36000);
-      console.log(lanzamientos);
+    
+    
+        for (let i = 0; i < 36000; i++) {
+            let dado1 = lanzarDado();
+            let dado2 = lanzarDado();
+            let suma = dado1 + dado2;
+            frecuencias[suma]++;
+        }
+    
+    
+        console.log("\nFrecuencia de cada suma (36,000 lanzamientos):");
+        for (let i = 2; i <= 12; i++) {
+            console.log(`Suma ${i}: ${frecuencias[i]} veces (${((frecuencias[i] / 36000) * 100).toFixed(2)}%)`);
+        }
+    }
+    
 }
