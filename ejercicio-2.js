@@ -70,21 +70,24 @@ function eje6(){
     }
 }
 function eje8(){
-    function print() {
-        var texto = prompt("Introducí un texto para saber si es un palíndromo");
-        esPalindromo(texto);
-    }
+     let text = 'la ruta nos aporto otro paso natural'
+        let arr = text.replaceAll(' ', '').split('')
+        let aciertos = 0, i=0, l = arr.length-1
     
-    
-    function esPalindromo(cadena) {
-        let cadenaLimpia = cadena.replace(/\s+/g, '').toLowerCase();
-        let cadenaInvertida = cadenaLimpia.split('').reverse().join('');
-        if (cadenaLimpia === cadenaInvertida) {
-            console.log("El texto es un palíndromo");
-        } else {
-            console.log("El texto no es un palíndromo");
+        while(i<arr.length-1){
+            if(arr[i] == arr[l]){
+                aciertos++
+            }
+            i++
+            l--
         }
-    }    
+    
+        if(aciertos == arr.length-1){
+            console.log("es palindromo")
+        }
+        else{
+            console.log("no es palindromo")
+        }
 }
 function eje9(){
     function Persona(nombre, edad, genero) {
@@ -148,35 +151,14 @@ function eje9(){
     
 }
 function eje10(){
-    var frecuencias = new Array(13).fill(0);
-
-
-    function lanzarDado() {
-        return Math.floor(Math.random() * 6) + 1;
+    var dado1, dado2, result, array = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    for(i=0; i<36000; i++){
+        dado1 = parseInt(Math.random() * 7)
+        dado2 = parseInt(Math.random() * 7)
+        result = dado1 + dado2
+        array[result]++
     }
-    
-    
-    function print() {
-        console.log("Lanzamientos:");
-        for (let i = 0; i < 5; i++) {
-            let dado1 = lanzarDado();
-            let dado2 = lanzarDado();
-            console.log(`Lanzamiento ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}, Suma = ${dado1 + dado2}`);
-        }
-    
-    
-        for (let i = 0; i < 36000; i++) {
-            let dado1 = lanzarDado();
-            let dado2 = lanzarDado();
-            let suma = dado1 + dado2;
-            frecuencias[suma]++;
-        }
-    
-    
-        console.log("\nFrecuencia de cada suma (36,000 lanzamientos):");
-        for (let i = 2; i <= 12; i++) {
-            console.log(`Suma ${i}: ${frecuencias[i]} veces (${((frecuencias[i] / 36000) * 100).toFixed(2)}%)`);
-        }
+    for(r=2; r<=12; r++){
+        console.log(r+":"+array[r])
     }
-    
 }
