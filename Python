@@ -1,0 +1,96 @@
+def Eje1():
+    num = int(input("Ingresa un número"))
+    num2 = int(input("Ingresa otro número"))
+    resultado = num+num2
+    print("El resultado de ", num,"mas ",num2," es igual a ",resultado)#
+#Eje1()
+def Eje2():
+    num3 = int(input("Ingresa un número"))
+    num4 = int(input("Ingresa un número"))
+    num5 = int(input("Ingresa un número"))
+    num6 = int(input("Ingresa un número"))
+    resultados2 = num3+num4+num5+num6
+    print("El resultado de los números sumados es ",resultados2)
+#Eje2()
+def Eje3():
+    num = int(input("Ingresa un número"))
+    num2 = int(input("Ingresa otro número"))
+    resultado = num*num2
+    print("La superficie del rectángulo es ",resultado)
+#Eje3()
+def Eje4():
+    num = float(input("Ingresa un número decimal"))
+    superficie = num*num
+    print("La superficie del cuadrado es ", superficie)
+#Eje4()
+def Eje5():
+    horas = int(input("ingresa las horas"))
+    minutos = int(input("ingrese los minutos"))
+    segundos = int(input("pone los segundos"))
+    Total = horas*60
+    total2 = Total*60+minutos*60
+    totalS = total2+segundos
+    print("Los segundos totales de la horas ingresada son", totalS)
+#Eje5()
+def Eje6():
+    lado1 = float(input("ingresa un lado del triangulo"))
+    lado2 = float(input("ingrese el otro lado"))
+    superficie = lado1*lado2
+    superficieT = superficie/2
+    print("La superficie del triangulo es ", superficieT)
+#Eje6()
+def Eje7():
+    num1 = int(input("Ingresa un número"))
+    num2 = int(input("Ingresa un número"))
+    num3 = int(input("Ingresa un número"))
+    num4 = int(input("Ingresa un número"))
+    num5 = int(input("Ingresa un número"))
+    num6 = int(input("Ingresa un número"))
+    resultado = num1+num2+num3+num4+num5+num6
+    resultadoT = resultado/6
+    print("El promedio es ",resultadoT)
+#Eje7()
+def Eje8():
+    num1 = int(input("Ingresa un número"))
+    num2 = int(input("Ingresa un número"))
+    if num1<num2:
+    
+        resultado = num1/num2
+        resultadoT = resultado*100
+        print("El porcentaje que ocupa el ",num1,"del ",num2,"es de ",resultadoT,"#")
+    
+    if num1>num2:
+    
+        resultado = num2/num1
+        resultadoT = resultado*100
+        print("El porcentaje que ocupa el ",num2,"del ",num1,"es de ",resultadoT,"%")
+    
+#Eje8()
+def Eje9():
+    fecha = int(input("Pone tu fecha de nacimiento con los 8 digitos"))
+    dia = fecha//1000000
+    mes = (fecha//10000) % 100
+    año = fecha % 100000
+    print("Naciste el dia ",dia,"del mes",mes,"del año ",año)
+#Eje9()
+def Eje10():
+    nota1 = int(input("ingresa tu nota del 0 al 10"))
+    nota2 = int(input("ingresa tu nota del 0 al 10"))
+    nota3 = int(input("ingresa tu nota del 0 al 10"))
+    promedio1 = (nota1*20)/100
+    promedio2 = (nota2*30)/100
+    promedio3 = (nota3*50)/100
+    promedioT = promedio1+promedio2+promedio3
+    print("Tu promedio es: ",promedioT)
+#Eje10()
+def Eje11():
+    salario=5500
+    comision = 200
+    AV = int(input("Autos vendidos: "))
+    valor = int(input("Valor del auto: "))
+    plus = comision*AV
+    plus2 = (valor*5)/100
+    plus2T = plus2*AV
+    salarioT = plus+plus2T+salario
+    print("Tu salario es de: ", salarioT)
+#Eje11()
