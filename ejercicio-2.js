@@ -69,6 +69,16 @@ function eje6(){
         console.log("El número ingresado es par")
     }
 }
+function eje7(){
+    let texto = prompt("ingrese texto")
+    if (texto === texto.toUpperCase()) {
+        console.log("La texto está formada solo por mayúsculas.");
+      } else if (texto === texto.toLowerCase()) {
+        console.log("La texto está formada solo por minúsculas.");
+      } else {
+        console.log("La texto es una mezcla de mayúsculas y minúsculas.");
+      }
+    }
 function eje8(){
      let text = 'la ruta nos aporto otro paso natural'
         let arr = text.replaceAll(' ', '').split('')
